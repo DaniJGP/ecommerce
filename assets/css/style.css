@@ -1,0 +1,137 @@
+:root {
+  --white: #ffffff;
+  --off-white: #dddcd5;
+  --asphalt: #0c0404;
+  --ash: #666362;
+  --sunset: #f9c784;
+  --sandy: hsl(23, 80%, 40%);
+  --pumpkin: hsl(23, 90%, 50%);
+  --dark-blue: #4e598c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas:
+    'navbar navbar'
+    'sidebar main'
+    'footer footer'
+  ;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+nav {
+  grid-area: navbar;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: var(--off-white);
+}
+
+nav a:hover {
+  color: var(--white);
+}
+
+nav .link {
+  margin: 0 5px;
+}
+
+main {
+  grid-area: main;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: min-content;
+  gap: 1rem;
+  background-color: var(--off-white);
+  color: var(--asphalt);
+  padding: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  border-radius: 6px;
+  background-color: var(--white);
+  text-wrap: wrap;
+  gap: .5rem;
+}
+
+.card>img {
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 6px 6px 0 0;
+  flex: 1;
+}
+
+.card>.btn {
+  background-color: var(--ash);
+  color: var(--white);
+  width: 100%;
+  text-align: center;
+  padding: 1rem;
+  text-decoration: none;
+  border-radius: 0 0 6px 6px;
+}
+
+.card>.btn:hover {
+  background-color: var(--pumpkin);
+}
+
+aside {
+  grid-area: sidebar;
+  min-height: calc(100vh - 67px - 96px);
+  background-color: var(--off-white);
+  padding: .5rem 1rem;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+
+aside h2 {
+  padding: 1rem;
+}
+
+aside ul {
+  display: grid;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+  list-style-type: none;
+  gap: .5rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: var(--dark-blue);
+  color: var(--off-white);
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.subtle {
+  color: var(--ash);
+}
